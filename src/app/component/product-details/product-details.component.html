@@ -1,0 +1,23 @@
+<div class="bg-dark text-center p-5 text-light container">
+    <h2> {{ProductId}}</h2>
+    <p class="lead fs-3">
+        Product Name : <strong class="text-success"> {{product.ProductName}}</strong>
+    </p>
+    <p class="lead fs-3">
+        Price : <strong class="text-success"> {{product.ProductPrice}}</strong>
+    </p>
+    <p class="lead fs-5">
+        Quantity : <strong class="text-danger">{{product.ProductQuantity}}</strong>
+    </p>
+    <div>
+        <i class="text-warning mx-1 bi bi-star-fill"></i>
+        <i class="text-warning mx-1 bi bi-star-fill"></i>
+        <i class="text-warning mx-1 bi bi-star-fill"></i>
+        <i class="text-warning mx-1 bi bi-star-fill"></i>
+        <i class="text-warning mx-1 bi bi-star-fill"></i>
+    </div>
+    <button (click)="backToHome()" class="btn btn-outline-primary mt-5">
+        Back To Products
+    </button>
+
+</div>

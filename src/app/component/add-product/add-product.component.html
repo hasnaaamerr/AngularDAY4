@@ -1,0 +1,157 @@
+<div class="container">
+    <form [formGroup]="productForm" (submit)="formHandler($event)">
+        <div class="mb-3 ">
+            <label for="formGroupExampleInput" class="form-label">Product Name</label>
+            <input formControlName="ProductName" type="text" class="form-control" id="formGroupExampleInput"
+                placeholder="Product Name">
+        </div>
+        <ng-container *ngIf="GetProductName.touched">
+            <div *ngIf="GetProductName.hasError('required')" id="emailHelp" class="form-text text-danger">
+                Product Name Is Required
+            </div>
+            <div *ngIf="GetProductName.hasError('minlength')" id="bbHelp" class="form-text text-danger">
+                Product Name Length must be >= 3
+            </div>
+        </ng-container>
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Product Price</label>
+            <input formControlName="ProductPrice" type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Product Price">
+        </div>
+
+        <ng-container *ngIf="GetProductPrice.touched">
+            <div *ngIf="GetProductPrice.hasError('required')" id="emailHelp" class="form-text text-danger">
+                Product price Is Required
+            </div>
+            <div *ngIf="GetProductPrice.hasError('min')" id="emailHelp" class="form-text text-danger">
+                Product price must be > 100
+            </div>
+        </ng-container>
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Product Quantity</label>
+            <input formControlName="ProductQuantity" type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Product Quantity">
+        </div>
+        <ng-container *ngIf="GetProductQuantity.touched">
+            <div *ngIf="GetProductQuantity.hasError('required')" id="emailHelp" class="form-text text-danger">
+                Product Quntatity Is Required
+            </div>
+
+        </ng-container>
+        <!-- <label for="formGroupExampleInput2" class="form-label">Product Image</label>
+        <input type="file" class="form-label"> -->
+
+        <button type="submit" class="btn btn-outline-primary mt-5">
+            {{productId==0 ? "Save" :"Edit"}}
+        </button>
+        <!-- <button (click)="backToHome()" class="btn btn-outline-primary mt-5">
+            Save
+        </button> -->
+    </form>
+</div>
+
+
+
+
+
+<!-- 
+<div class="p-5">
+    <div class="container">
+        <form [formGroup]="productForm" (submit)="formHandler($event)">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    formControlName="productName" placeholder="Enter Product Name" />
+                <ng-container *ngIf="getProductName.touched">
+                    <div *ngIf="getProductName.hasError('required')" id="emailHelp" class="form-text text-danger">
+                        Product Name Is Required
+                    </div>
+                    <div *ngIf="getProductName.hasError('minlength')" id="emailHelp" class="form-text text-danger">
+                        Product Name Length must be >= 3
+                    </div>
+                </ng-container>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"> Price</label>
+                <input type="text" class="form-control" formControlName="price" id="exampleInputPassword1"
+                    placeholder="Enter Product Price" />
+                <ng-container *ngIf="getPrice.touched">
+                    <div *ngIf="getPrice.hasError('required')" id="emailHelp" class="form-text text-danger">
+                        Price is Required
+                    </div>
+                    <div *ngIf="getPrice.hasError('min')" id="emailHelp" class="form-text text-danger">
+                        Min Value is 10
+                    </div>
+                </ng-container>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"> Quantity</label>
+                <input type="text" class="form-control" formControlName="quantity" id="exampleInputPassword1"
+                    placeholder="Enter Product Quantity" />
+                <ng-container *ngIf="getQuantity.touched">
+                    <div *ngIf="getQuantity.hasError('required')" id="emailHelp" class="form-text text-danger">
+                        Quantity is required
+                    </div>
+                </ng-container>
+            </div>
+
+            <p>{{ productForm.value | json }}</p>
+
+            <button type="submit" class="btn btn-dark">
+                {{ productId == 0 ? "Add Product" : "Edit Product" }}
+            </button>
+        </form>
+    </div>
+</div>
+<div class="p-5">
+    <div class="container">
+        <form [formGroup]="productForm" (submit)="formHandler($event)">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    formControlName="productName" placeholder="Enter Product Name" />
+                <ng-container *ngIf="getProductName.touched">
+                    <div *ngIf="getProductName.hasError('required')" id="emailHelp" class="form-text text-danger">
+                        Product Name Is Required
+                    </div>
+                    <div *ngIf="getProductName.hasError('minlength')" id="emailHelp" class="form-text text-danger">
+                        Product Name Length must be >= 3
+                    </div>
+                </ng-container>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"> Price</label>
+                <input type="text" class="form-control" formControlName="price" id="exampleInputPassword1"
+                    placeholder="Enter Product Price" />
+                <ng-container *ngIf="getPrice.touched">
+                    <div *ngIf="getPrice.hasError('required')" id="emailHelp" class="form-text text-danger">
+                        Price is Required
+                    </div>
+                    <div *ngIf="getPrice.hasError('min')" id="emailHelp" class="form-text text-danger">
+                        Min Value is 10
+                    </div>
+                </ng-container>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"> Quantity</label>
+                <input type="text" class="form-control" formControlName="quantity" id="exampleInputPassword1"
+                    placeholder="Enter Product Quantity" />
+                <ng-container *ngIf="getQuantity.touched">
+                    <div *ngIf="getQuantity.hasError('required')" id="emailHelp" class="form-text text-danger">
+                        Quantity is required
+                    </div>
+                </ng-container>
+            </div>
+
+            <p>{{ productForm.value | json }}</p>
+
+            <button type="submit" class="btn btn-dark">
+                {{ productId == 0 ? "Add Product" : "Edit Product" }}
+            </button>
+        </form>
+    </div>
+</div> -->
