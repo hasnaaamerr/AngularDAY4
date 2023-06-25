@@ -27,13 +27,17 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  delete() {
-    return this.productService.deleteProduct(this.productId).subscribe({
-      next: () => {
-        console.log("product is removed")
-
-      }
-    })
+  delete(id:number) {
+    let con = confirm("Are you sure to delete ?");
+    if(con){
+      return this.productService.deleteProduct(id).subscribe({
+        next: () => {
+          console.log("product is removed")
+          this.productList =  this.productList.filter((p:any) => p.id !== id);
+        }
+      })
+    }
+    return;
   }
 
 
