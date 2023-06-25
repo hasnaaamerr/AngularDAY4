@@ -42,12 +42,17 @@
             </div>
 
         </ng-container>
+
+
         <!-- <label for="formGroupExampleInput2" class="form-label">Product Image</label>
         <input type="file" class="form-label"> -->
 
         <button type="submit" class="btn btn-outline-primary mt-5">
             {{productId==0 ? "Save" :"Edit"}}
         </button>
+
+
+        <p>{{productForm.value | json}}</p>
         <!-- <button (click)="backToHome()" class="btn btn-outline-primary mt-5">
             Save
         </button> -->

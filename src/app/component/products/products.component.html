@@ -12,6 +12,7 @@
 
             </tr>
         </thead>
+
         <tbody>
             <tr *ngFor="let product of productList , let i=index ">
                 <th scope="row">{{product.ProductId}}</th>
@@ -27,7 +28,7 @@
                     <i [routerLink]="['/products',product.ProductId,'edit']"
                         class="bi bi-pencil-square fs-3 text-success mx-3">
                     </i>
-                    <!-- <i (click)="delete(i)" class="bi bi-x-circle fs-3 text-danger"></i> -->
+                    <i (click)="delete()" class="bi bi-x-circle fs-3 text-danger"></i>
                 </td>
 
             </tr>

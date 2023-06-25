@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Iproduct } from '../Models/iproduct';
 import { ProductService } from 'src/app/Services/product.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -8,20 +9,30 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  productId: any;
   productList: any;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private activateRoute: ActivatedRoute) {
+    this.productId = this.activateRoute.snapshot.paramMap.get("id");
 
   }
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe({
-      next: (response => {
+      next: (response) => {
         this.productList = response
-      }),
-      error: (error => { console.log(error) })
+      },
+      error: (error) => { console.log(error) }
 
 
+    })
+  }
+
+  delete() {
+    return this.productService.deleteProduct(this.productId).subscribe({
+      next: () => {
+        console.log("product is removed")
+
+      }
     })
   }
 

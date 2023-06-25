@@ -12,10 +12,11 @@ export class AddProductComponent implements OnInit {
   productId: any;
   product: any;
   constructor(private router: Router, private productService: ProductService, private activatedRooute: ActivatedRoute) {
-    this.productId = this.activatedRooute.snapshot.paramMap.get('id');
+
 
   }
   ngOnInit(): void {
+    this.productId = this.activatedRooute.snapshot.paramMap.get('id');
 
 
     if (this.productId != 0) {
@@ -84,6 +85,8 @@ export class AddProductComponent implements OnInit {
             },
           });
       }
+    } else {
+      console.log("Error")
     }
   }
 }
