@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "ProductName": "sumsung6",
+      "ProductPrice": 300,
+      "ProductQuantity": 10,
+      "ProductImg": ""
+    },
+    {
+      "id": 2,
+      "ProductName": "sumsung",
+      "ProductPrice": 300,
+      "ProductQuantity": 10,
+      "ProductImg": "assets/img/1.jpg"
+    },
+    {
+      "id": 3,
+      "ProductName": "sumsung11",
+      "ProductPrice": 700,
+      "ProductQuantity": 10,
+      "ProductImg": "assets/img/10.jpg"
+    },
+    {
+      "id": 4,
+      "ProductName": "sumsung2",
+      "ProductPrice": 30,
+      "ProductQuantity": 80,
+      "ProductImg": "assets/img/2.jpg"
+    },
+    {
+      "id": 5,
+      "ProductName": "sumsung3",
+      "ProductPrice": 300,
+      "ProductQuantity": 10,
+      "ProductImg": "assets/img/3.jpg"
+    },
+    {
+      "id": 6,
+      "ProductName": "sumsung4",
+      "ProductPrice": 600,
+      "ProductQuantity": 10,
+      "ProductImg": "assets/img/6.jpg"
+    },
+    {
+      "id": 7,
+      "ProductName": "sumsung5",
+      "ProductPrice": 3000,
+      "ProductQuantity": 90,
+      "ProductImg": "assets/img/9.jpg"
+    },
+    {
+      "id": 8,
+      "ProductName": "sumsung5",
+      "ProductPrice": 3000,
+      "ProductQuantity": 90
+    }
+  ]
+}
